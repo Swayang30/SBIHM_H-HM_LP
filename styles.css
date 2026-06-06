@@ -4276,3 +4276,181 @@ select.hero-form__input option {
     /* matches mobile-bottom-cta height */
   }
 }
+
+/* ─── Mobile Responsiveness Improvements ─────────────────────────────────── */
+
+/* Course selector in hero form always spans full width in the 2-col grid */
+#field-course-hero {
+  grid-column: 1 / -1;
+}
+
+/* ── Very small phones (< 480px) ─────────────────────────────────────────── */
+@media (max-width: 479px) {
+  /* Career cards: single column so text isn't cramped */
+  .careers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero CTA buttons: stack and fill full width */
+  .hero__ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Testimonial card: stack avatar above text */
+  .testimonial-card {
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1.25rem;
+  }
+
+  /* Programme info strip: single column on tiny screens */
+  .programme-info-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .programme-info-item {
+    border-right: none;
+    border-bottom: 1px solid var(--sbihm-line);
+  }
+
+  .programme-info-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Masters goals: already collapses at 680px, but ensure text wraps */
+  .masters-goal-card {
+    padding: 1.5rem 1rem;
+  }
+
+  /* Reduce heading sizes slightly on very small screens */
+  .hero__headline {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  /* Apply section headline on mobile */
+  .apply-left__headline {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+
+  /* Fees course cards row: stack label/amount vertically when screen is tiny */
+  .fees-course-card__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    padding: 0.55rem 0;
+  }
+
+  .fees-course-card__amount {
+    text-align: left;
+    white-space: normal;
+  }
+
+  /* Footer logo: constrain on small screens */
+  .site-header__logo img {
+    height: 32px;
+  }
+
+  /* Hero trust micro: stack on very small screens */
+  .hero__trust-micro {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
+/* ── Mobile (< 768px) additional fixes ───────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Hero: reduce top/bottom padding for tighter mobile layout */
+  .hero {
+    padding-block: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Hero form: fill available width, no artificial max */
+  .hero-form {
+    max-width: 100%;
+  }
+
+  /* Hero visual: remove margin, fill full width */
+  .hero__visual {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Hero inner gap: tighter on mobile */
+  .hero__inner {
+    gap: 1.5rem;
+  }
+
+  /* Programme CTAs: stack buttons on mobile */
+  .programme-ctas {
+    flex-direction: column;
+  }
+
+  .programme-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Admission steps: ensure content area doesn't overflow */
+  .admission-step__content {
+    min-width: 0;
+  }
+
+  /* Apply thank-you actions: stack on mobile */
+  .apply-thankyou__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .apply-thankyou__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* CTA banner: ensure button full-width on mobile */
+  .cta-banner .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Section titles: tighten line height on mobile */
+  .section__title {
+    line-height: 1.2;
+  }
+
+  /* Masters continuation box: reduce padding on mobile */
+  .masters-continuation {
+    padding: 1.25rem 1rem;
+  }
+
+  /* MBA sidebar: reduce padding on mobile */
+  .mba-sidebar {
+    padding: 1.5rem;
+    position: static;
+  }
+
+  /* Funding cards: stack on mobile (already handled via flex-direction: column) */
+  .funding-cards--row .funding-card {
+    min-width: 0;
+  }
+
+  /* Partners grid: 2 columns on mobile max */
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hero form header padding on mobile */
+  .hero-form__header {
+    padding: 0.85rem 1rem;
+  }
+
+  .hero-form__body {
+    padding: 0.75rem 1rem 0.85rem;
+  }
+}
