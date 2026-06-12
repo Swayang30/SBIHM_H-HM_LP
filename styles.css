@@ -2678,15 +2678,15 @@ select.hero-form__input option {
 
 /* ─── 19. Fees & Scholarships ─────────────────────────────────────────────── */
 
-/* Course fee cards grid */
+/* Course fee cards grid — 2×2 for four programmes */
 .fees-courses-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   margin-bottom: 2rem;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 700px) {
   .fees-courses-grid {
     grid-template-columns: 1fr;
   }
@@ -2723,6 +2723,11 @@ select.hero-form__input option {
   color: var(--sbihm-black);
 }
 
+.fees-course-card__header--teal {
+  background: #0d8a6f;
+  color: white;
+}
+
 .fees-course-card__label {
   display: block;
   font-size: 0.7rem;
@@ -2753,6 +2758,10 @@ select.hero-form__input option {
 
 .fees-course-card__header--gold .fees-course-card__duration {
   background: rgba(0, 0, 0, 0.12);
+}
+
+.fees-course-card__header--teal .fees-course-card__duration {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .fees-course-card__body {
@@ -4452,5 +4461,337 @@ select.hero-form__input option {
 
   .hero-form__body {
     padding: 0.75rem 1rem 0.85rem;
+  }
+}
+
+/* ── 30. Diploma Section ─────────────────────────────────────────────────── */
+
+.diploma-section {
+  background: #fff;
+}
+
+/* Eyebrow variant — teal/green accent */
+.course-eyebrow--diploma {
+  background: rgba(16, 140, 113, 0.12);
+  border-color: rgba(16, 140, 113, 0.35);
+  color: #0d8a6f;
+}
+
+/* Header */
+.diploma-hd {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.diploma-hd__eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+
+.diploma-hd__badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.diploma-hd__badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.75rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--sbihm-line);
+  color: var(--sbihm-mute);
+  background: var(--sbihm-cream);
+}
+
+.diploma-hd__badge--gold {
+  background: rgba(212, 160, 23, 0.1);
+  border-color: rgba(212, 160, 23, 0.4);
+  color: #9a7200;
+}
+
+/* Meta strip override — more compact on diploma */
+.diploma-meta-strip {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--sbihm-cream);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+}
+
+/* Goals band */
+.diploma-goals-band {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--sbihm-cream);
+  border-radius: 16px;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 2.5rem);
+  border: 1px solid var(--sbihm-line);
+}
+
+.diploma-goals-band__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sbihm-mute);
+  margin-bottom: 1.4rem;
+}
+
+.diploma-goals-band__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.9rem;
+}
+
+.diploma-goal {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--sbihm-charcoal);
+  line-height: 1.6;
+}
+
+.diploma-goal__check {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(16, 140, 113, 0.12);
+  color: #0d8a6f;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+}
+
+/* Subjects grid — 3 columns on wide, falls back to 2 then 1 */
+.diploma-subjects-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+@media (max-width: 1020px) {
+  .diploma-subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .diploma-subjects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Practical card highlight treatment */
+.curriculum-card--practical {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2e2e2e 100%);
+  border-color: transparent;
+}
+
+.curriculum-card--practical .curriculum-card__title,
+.curriculum-card--practical .curriculum-card__list li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.curriculum-card--practical .curriculum-card__list li::before {
+  background: var(--sbihm-gold);
+}
+
+/* Career layout */
+.diploma-careers-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .diploma-careers-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.diploma-careers-col {
+  background: var(--sbihm-cream);
+  border: 1px solid var(--sbihm-line);
+  border-radius: 16px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.diploma-careers-col--sectors {
+  background: var(--sbihm-black);
+}
+
+.diploma-careers-col__title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--sbihm-black);
+  margin-bottom: 1.25rem;
+}
+
+.diploma-careers-col--sectors .diploma-careers-col__title {
+  color: white;
+}
+
+.diploma-careers-col--sectors .diploma-careers-col__title svg {
+  stroke: var(--sbihm-gold);
+}
+
+/* Role pills cloud */
+.diploma-roles-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.diploma-role-pill {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  background: var(--sbihm-paper);
+  border: 1.5px solid var(--sbihm-line);
+  color: var(--sbihm-charcoal);
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.diploma-role-pill:hover {
+  border-color: var(--sbihm-red);
+  color: var(--sbihm-red);
+}
+
+.diploma-role-pill--accent {
+  background: rgba(212, 160, 23, 0.1);
+  border-color: rgba(212, 160, 23, 0.4);
+  color: #9a7200;
+}
+
+/* Sectors list */
+.diploma-sectors-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.diploma-sectors-list li {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.diploma-sectors-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--sbihm-gold);
+  font-weight: 700;
+}
+
+/* Placement band */
+.diploma-placement-band {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--sbihm-red) 0%, var(--sbihm-red-dark) 100%);
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.diploma-placement-band__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.diploma-placement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.diploma-placement-item__icon {
+  flex-shrink: 0;
+  opacity: 0.85;
+  margin-top: 0.1rem;
+  color: white;
+}
+
+/* Advantages */
+.diploma-advantages {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--sbihm-cream);
+  border: 1px solid var(--sbihm-line);
+  border-radius: 16px;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.diploma-advantages__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.5vw + 0.7rem, 1.45rem);
+  font-weight: 700;
+  color: var(--sbihm-black);
+  margin-bottom: 1.5rem;
+}
+
+.diploma-advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.85rem;
+}
+
+.diploma-adv-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--sbihm-charcoal);
+  line-height: 1.6;
+}
+
+.diploma-adv-item__star {
+  flex-shrink: 0;
+  color: var(--sbihm-gold);
+  font-size: 1rem;
+  margin-top: 0.1rem;
+}
+
+/* Responsive adjustments for Diploma */
+@media (max-width: 600px) {
+  .diploma-hd__eyebrow-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .diploma-meta-strip {
+    padding: 1rem;
+  }
+
+  .diploma-placement-band__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .diploma-advantages__grid {
+    grid-template-columns: 1fr;
   }
 }
